@@ -81,5 +81,4 @@ func Day1() {
 
     println("Part a: ", checkDiff(list1, list2))
     println("Part b: ", similarity(list1, list2))
-    return
 }
