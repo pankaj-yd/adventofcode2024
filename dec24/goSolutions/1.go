@@ -1,4 +1,4 @@
-package main
+package gosolutions
 
 import (
 	"C"
@@ -44,7 +44,7 @@ func similarity(list1, list2 []int) int {
 }
 
 
-func main() {
+func Day1() {
     // Get the path of the current Go source file
 	_, currentFile, _, _ := runtime.Caller(0)
 
