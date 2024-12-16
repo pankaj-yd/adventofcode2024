@@ -13,6 +13,7 @@ var dayRuns = map[int]func(){
 	2: gosolutions.Day2,
 	3: gosolutions.Day3,
 	4: gosolutions.Day4,
+	5: gosolutions.Day5,
 }
 
 func main() {
