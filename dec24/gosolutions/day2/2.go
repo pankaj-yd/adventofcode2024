@@ -1,4 +1,4 @@
-package gosolutions
+package day2
 
 import (
 	"C"
@@ -74,7 +74,7 @@ func Day2() {
 
 	// Get the directory of the Go source file
 	currentDir := filepath.Dir(currentFile)
-    parentDir := filepath.Dir(currentDir)
+    parentDir := filepath.Dir(filepath.Dir(currentDir))
     file, err := os.Open(parentDir + "/testcases/2.txt")
 
     if err != nil {

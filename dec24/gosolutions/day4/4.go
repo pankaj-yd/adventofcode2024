@@ -1,5 +1,4 @@
-package gosolutions
-
+package day4
 import (
 	"bufio"
 	"fmt"
@@ -112,7 +111,7 @@ func Day4() {
 
 	// Get the directory of the Go source file
 	currentDir := filepath.Dir(currentFile)
-    parentDir := filepath.Dir(currentDir)
+    parentDir := filepath.Dir(filepath.Dir(currentDir))
     file, err := os.Open(parentDir + "/testcases/4.txt")
 
     if err != nil {

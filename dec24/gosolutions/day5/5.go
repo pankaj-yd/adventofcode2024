@@ -1,4 +1,4 @@
-package gosolutions
+package day5
 
 import (
 	"bufio"
@@ -69,7 +69,7 @@ func Day5() {
 
 	// Get the directory of the Go source file
 	currentDir := filepath.Dir(currentFile)
-    parentDir := filepath.Dir(currentDir)
+    parentDir := filepath.Dir(filepath.Dir(currentDir))
     file, err := os.Open(parentDir + "/testcases/5.txt")
 
     if err != nil {

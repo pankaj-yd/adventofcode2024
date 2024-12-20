@@ -1,19 +1,25 @@
 package main
 
 import (
-	"adventofcode/dec24/gosolutions"
 	"fmt"
 	"log"
 	"os"
 	"strconv"
+	"adventofcode/dec24/gosolutions/day1"
+	"adventofcode/dec24/gosolutions/day2"
+	"adventofcode/dec24/gosolutions/day3"
+	"adventofcode/dec24/gosolutions/day4"
+	"adventofcode/dec24/gosolutions/day5"
+	"adventofcode/dec24/gosolutions/day6"
 )
 
 var dayRuns = map[int]func(){
-	1: gosolutions.Day1,
-	2: gosolutions.Day2,
-	3: gosolutions.Day3,
-	4: gosolutions.Day4,
-	5: gosolutions.Day5,
+	1: day1.Day1,
+	2: day2.Day2,
+	3: day3.Day3,
+	4: day4.Day4,
+	5: day5.Day5,
+	6: day6.Day6,
 }
 
 func main() {
