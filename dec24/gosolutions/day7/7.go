@@ -102,8 +102,8 @@ func Day7() {
 		input = append(input, Equation{result: res, operands: operands})
 	}
 	fmt.Println("Expected answers:")
-    fmt.Println("Part a: ", 12553187650171)
-    fmt.Println("Part b: ", 96779702119491)
+    fmt.Println("Part a: ", 3749)
+    fmt.Println("Part b: ", 11387)
     fmt.Println("Your answers:")
     fmt.Println("Part a: ", solve1(input))
     fmt.Println("Part b: ", solve2(input))

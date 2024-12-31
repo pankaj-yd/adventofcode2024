@@ -67,8 +67,8 @@ func Day3() {
 	}
 
 	println("Expected answers:")
-    println("Part a: ", 169021493)
-    println("Part b: ", 111762583)
+    println("Part a: ", 161)
+    println("Part b: ", 48)
     println()
     println("Your answers:")
     println("Part a: ", solveMul(&input))

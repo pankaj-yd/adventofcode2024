@@ -131,8 +131,8 @@ func Day4() {
 	cols = len(input[0])
 
 	fmt.Println("Expected answers:")
-    fmt.Println("Part a: ", 2493)
-    fmt.Println("Part b: ", 1890)
+    fmt.Println("Part a: ", 18)
+    fmt.Println("Part b: ", 9)
     fmt.Println("Your answers:")
     fmt.Println("Part a: ", countXmas(input))
     fmt.Println("Part b: ", countShape(input))

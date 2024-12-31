@@ -5,6 +5,7 @@ import (
 	"adventofcode/dec24/gosolutions/day10"
 	"adventofcode/dec24/gosolutions/day11"
 	"adventofcode/dec24/gosolutions/day12"
+	"adventofcode/dec24/gosolutions/day13"
 	"adventofcode/dec24/gosolutions/day2"
 	"adventofcode/dec24/gosolutions/day3"
 	"adventofcode/dec24/gosolutions/day4"
@@ -16,6 +17,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"slices"
 	"strconv"
 )
 
@@ -32,6 +34,22 @@ var dayRuns = map[int]func(){
 	10: day10.Day10,
 	11: day11.Day11,
 	12: day12.Day12,
+	13: day13.Day13,
+}
+
+func runAll(){
+	days := make([]int, 0)
+	for day := range dayRuns {
+		days = append(days, day)
+	}
+
+	slices.Sort(days)
+
+	for _, day := range days {
+		fmt.Println("Day: ", day)
+		dayRuns[day]()
+		fmt.Println("-----------------------")
+	}
 }
 
 func main() {
@@ -66,10 +84,13 @@ Options:
 			if day < 1 || day > 25 {
 				log.Fatalf("Error: Day '%d' is out of range (1-25).", day)
 			}
+		case "--all":
+			runAll()
 		default: 
 			log.Fatalf("Error: Invalid argument '%s'. Use -h or --help for more information.", args[i])
 		}
 	}
-    
-	dayRuns[day]()
+    if day != 0 {
+		dayRuns[day]()
+	}
 }

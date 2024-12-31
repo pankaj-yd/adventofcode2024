@@ -108,8 +108,8 @@ func Day5() {
 	}
 
 	fmt.Println("Expected answers:")
-    fmt.Println("Part a: ", 5391)
-    fmt.Println("Part b: ", 6142)
+    fmt.Println("Part a: ", 143)
+    fmt.Println("Part b: ", 123)
     fmt.Println("Your answers:")
     fmt.Println("Part a: ", solve1(updates))
     fmt.Println("Part b: ", solve2(updates))

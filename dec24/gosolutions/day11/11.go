@@ -109,8 +109,8 @@ func Day11() {
 
 	// compute answers
 	fmt.Println("Expected answers:")
-    fmt.Println("Part a: ", 217812)
-    fmt.Println("Part b: ", 259112729857522)
+    fmt.Println("Part a: ", 55312)
+    fmt.Println("Part b: ", 65601038650482)
     fmt.Println("Your answers:")
     fmt.Println("Part a: ", solve1(input))
     fmt.Println("Part b: ", solve2(input))

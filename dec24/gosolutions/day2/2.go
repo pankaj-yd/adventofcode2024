@@ -102,14 +102,10 @@ func Day2() {
         reports = append(reports, report)
     }
     println("Expected answers:")
-    println("Part a: ", 585)
-    println("Part b: ", 626)
+    println("Part a: ", 2)
+    println("Part b: ", 4)
     println()
     println("Your answers:")
     println("Part a: ", safeReports(reports))
     println("Part b: ", safeReportsTolerance(reports))
-
-    // Expected answers:
-    // Part a: 585
-    // Part b: 626
 }

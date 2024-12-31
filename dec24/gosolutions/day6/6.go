@@ -161,8 +161,8 @@ func Day6() {
 
 
 	fmt.Println("Expected answers:")
-    fmt.Println("Part a: ", 5129)
-    fmt.Println("Part b: ", 1888)
+    fmt.Println("Part a: ", 41)
+    fmt.Println("Part b: ", 6)
     fmt.Println("Your answers:")
     fmt.Println("Part a: ", uniqueVisits(input))
     fmt.Println("Part b: ", obstacles(input))
