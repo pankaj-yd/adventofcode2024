@@ -6,6 +6,7 @@ import (
 	"adventofcode/dec24/gosolutions/day11"
 	"adventofcode/dec24/gosolutions/day12"
 	"adventofcode/dec24/gosolutions/day13"
+	"adventofcode/dec24/gosolutions/day14"
 	"adventofcode/dec24/gosolutions/day2"
 	"adventofcode/dec24/gosolutions/day3"
 	"adventofcode/dec24/gosolutions/day4"
@@ -35,6 +36,7 @@ var dayRuns = map[int]func(){
 	11: day11.Day11,
 	12: day12.Day12,
 	13: day13.Day13,
+	14: day14.Day14,
 }
 
 func runAll(){
@@ -90,7 +92,9 @@ Options:
 			log.Fatalf("Error: Invalid argument '%s'. Use -h or --help for more information.", args[i])
 		}
 	}
-    if day != 0 {
-		dayRuns[day]()
+	dayFunc, ok := dayRuns[day]
+	if !ok {
+		log.Fatalf("Error: Day '%d' is not added.", day)
 	}
+    dayFunc()
 }
