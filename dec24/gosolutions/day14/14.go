@@ -163,8 +163,9 @@ func Day14() {
 
 	// Get the directory of the Go source file
 	currentDir := filepath.Dir(currentFile)
-	parentDir := filepath.Dir(filepath.Dir(currentDir))
-	file, err := os.Open(parentDir + "/testcases/14.txt")
+	parentDir := filepath.Dir(currentDir)
+	testCasePath := filepath.Join(parentDir, "..", "testcases", "14.txt")
+	file, err := os.Open(testCasePath)
 
 	if err != nil {
 		log.Fatal("Unable to open testcase file")

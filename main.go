@@ -7,6 +7,7 @@ import (
 	"adventofcode/dec24/gosolutions/day12"
 	"adventofcode/dec24/gosolutions/day13"
 	"adventofcode/dec24/gosolutions/day14"
+	"adventofcode/dec24/gosolutions/day15"
 	"adventofcode/dec24/gosolutions/day2"
 	"adventofcode/dec24/gosolutions/day3"
 	"adventofcode/dec24/gosolutions/day4"
@@ -15,11 +16,10 @@ import (
 	"adventofcode/dec24/gosolutions/day7"
 	"adventofcode/dec24/gosolutions/day8"
 	"adventofcode/dec24/gosolutions/day9"
+	"flag"
 	"fmt"
 	"log"
-	"os"
 	"slices"
-	"strconv"
 )
 
 var dayRuns = map[int]func(){
@@ -37,6 +37,7 @@ var dayRuns = map[int]func(){
 	12: day12.Day12,
 	13: day13.Day13,
 	14: day14.Day14,
+	15: day15.Day15,
 }
 
 func runAll(){
@@ -55,46 +56,41 @@ func runAll(){
 }
 
 func main() {
-	args := os.Args[1:]
-	if len(args) == 0 {
-		log.Fatal("Error: No arguments provided. Use -h or --help for more information.")
+	dayPtr := flag.Int("d", 0, "Specify the day to run (1-25)")
+	runAllPtr := flag.Bool("a", false, "Run all days")
+	helpPtr := flag.Bool("h", false, "Display usage information")
+
+	flag.Parse()
+
+	if *helpPtr {
+		printUsage()
+		return
 	}
 
-	day := 0
-	var err error
-	for i := 0; i < len(args); i++ {
-		switch args[i] {
-		case "-h", "--help":
-			fmt.Print(`
-Usage: go run main.go [options]
+	if !*runAllPtr && *dayPtr == 0 {
+		log.Fatalf("Error: No arguments provided. Use -h or --help for more information.")
+	}
+
+	if *runAllPtr {
+		runAll()
+	}
+
+	if *dayPtr != 0{
+		dayFunc, ok := dayRuns[*dayPtr]
+		if !ok {
+			log.Fatalf("Error: Day '%d' is not added.", *dayPtr)
+		}
+		dayFunc()
+	}
+}
+
+func printUsage() {
+	usage := `Usage: go run main.go [options]
 
 Options:
-  -d <day>    Specify the day to run (1-25)
-			`)
-			return
-		case "-d": 
-			if i+1 >= len(args) {
-				log.Fatal("Error: -d flag requires a day number.")
-			}
-
-			day, err = strconv.Atoi(args[i+1])
-			if err != nil {
-				log.Fatalf("Error: Invalid day '%s': %v", args[i+1], err)
-			}
-			i++
-
-			if day < 1 || day > 25 {
-				log.Fatalf("Error: Day '%d' is out of range (1-25).", day)
-			}
-		case "--all":
-			runAll()
-		default: 
-			log.Fatalf("Error: Invalid argument '%s'. Use -h or --help for more information.", args[i])
-		}
-	}
-	dayFunc, ok := dayRuns[day]
-	if !ok {
-		log.Fatalf("Error: Day '%d' is not added.", day)
-	}
-    dayFunc()
+  -d   Specify the day to run (1-25)
+  -a   Run all days
+  -h   Display usage information
+`
+	fmt.Print(usage)
 }
