@@ -127,7 +127,7 @@ func solve2(robots []Robot) int {
 		}
 	}
 
-	printGrid(minscoreState.robots)
+	// printGrid(minscoreState.robots)
 
 	return minscoreState.time
 }

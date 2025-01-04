@@ -1,21 +1,22 @@
 package main
 
 import (
-	"adventofcode/dec24/gosolutions/day1"
-	"adventofcode/dec24/gosolutions/day10"
-	"adventofcode/dec24/gosolutions/day11"
-	"adventofcode/dec24/gosolutions/day12"
-	"adventofcode/dec24/gosolutions/day13"
-	"adventofcode/dec24/gosolutions/day14"
-	"adventofcode/dec24/gosolutions/day15"
-	"adventofcode/dec24/gosolutions/day2"
-	"adventofcode/dec24/gosolutions/day3"
-	"adventofcode/dec24/gosolutions/day4"
-	"adventofcode/dec24/gosolutions/day5"
-	"adventofcode/dec24/gosolutions/day6"
-	"adventofcode/dec24/gosolutions/day7"
-	"adventofcode/dec24/gosolutions/day8"
-	"adventofcode/dec24/gosolutions/day9"
+	"adventofcode/gosolutions/day1"
+	"adventofcode/gosolutions/day10"
+	"adventofcode/gosolutions/day11"
+	"adventofcode/gosolutions/day12"
+	"adventofcode/gosolutions/day13"
+	"adventofcode/gosolutions/day14"
+	"adventofcode/gosolutions/day15"
+	"adventofcode/gosolutions/day16"
+	"adventofcode/gosolutions/day2"
+	"adventofcode/gosolutions/day3"
+	"adventofcode/gosolutions/day4"
+	"adventofcode/gosolutions/day5"
+	"adventofcode/gosolutions/day6"
+	"adventofcode/gosolutions/day7"
+	"adventofcode/gosolutions/day8"
+	"adventofcode/gosolutions/day9"
 	"flag"
 	"fmt"
 	"log"
@@ -38,6 +39,7 @@ var dayRuns = map[int]func(){
 	13: day13.Day13,
 	14: day14.Day14,
 	15: day15.Day15,
+	16: day16.Day16,
 }
 
 func runAll(){
