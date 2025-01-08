@@ -13,6 +13,7 @@ import (
 	"adventofcode/gosolutions/day18"
 	"adventofcode/gosolutions/day19"
 	"adventofcode/gosolutions/day2"
+	"adventofcode/gosolutions/day20"
 	"adventofcode/gosolutions/day3"
 	"adventofcode/gosolutions/day4"
 	"adventofcode/gosolutions/day5"
@@ -46,6 +47,7 @@ var dayRuns = map[int]func(){
 	17: day17.Day17,
 	18: day18.Day18,
 	19: day19.Day19,
+	20: day20.Day20,
 }
 
 func runAll(){
