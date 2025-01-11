@@ -12,15 +12,15 @@ import (
 )
 
 const (
-	mod = 16777216
-	multBy64 = 6
-	divBy32 = 5
-	multBy2048 = 11
+	mod             = 16777216
+	multBy64        = 6
+	divBy32         = 5
+	multBy2048      = 11
 	partAIterations = 2000
 )
 
 func mix(currNum, toMix int) int {
-	return currNum^toMix
+	return currNum ^ toMix
 }
 
 func prune(currNum int) int {
@@ -61,7 +61,6 @@ func solve1(secrets []int) int {
 		}
 		ans += currNum
 	}
-	
 
 	return ans
 }
@@ -75,7 +74,7 @@ func solve2(secrets []int) int {
 	sequences := make([][]int, 0)
 	for _, secret := range secrets {
 		currNum := secret
-		currSeq := []int{currNum%10}
+		currSeq := []int{currNum % 10}
 		for i := 0; i < partAIterations; i++ {
 			currNum = generateNextNumber(currNum)
 			currSeq = append(currSeq, currNum%10)
@@ -83,13 +82,13 @@ func solve2(secrets []int) int {
 		sequences = append(sequences, currSeq)
 	}
 	// fmt.Println(sequences)
-	
+
 	diffSequences := make([][]int, 0)
-	
+
 	for _, sequence := range sequences {
 		currSeq := make([]int, 0)
 		for i := 1; i < len(sequence); i++ {
-			currSeq = append(currSeq, sequence[i] - sequence[i-1])
+			currSeq = append(currSeq, sequence[i]-sequence[i-1])
 		}
 
 		diffSequences = append(diffSequences, currSeq)
@@ -99,7 +98,7 @@ func solve2(secrets []int) int {
 	ans := 0
 	for i := range len(diffSequences) {
 		currSeq := make(map[Sequence]struct{}, 0)
-		for j := 0; j < len(diffSequences[i]) - 3; j++ {
+		for j := 0; j < len(diffSequences[i])-3; j++ {
 			seq := Sequence{a: diffSequences[i][j], b: diffSequences[i][j+1], c: diffSequences[i][j+2], d: diffSequences[i][j+3]}
 
 			_, ok := currSeq[seq]
@@ -142,8 +141,8 @@ func Day22() {
 	// compute answers
 	fmt.Println("Expected answers:")
 	// different rows and columns from sample case
-	fmt.Println("Part a: ", 0)
-	fmt.Println("Part b: ", 0)
+	fmt.Println("Part a: ", 37990510)
+	fmt.Println("Part b: ", 23)
 
 	fmt.Println("Your answers:")
 	startTime := time.Now()

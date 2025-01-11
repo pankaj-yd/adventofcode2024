@@ -143,7 +143,7 @@ func (pad *Pad) getPaths(move Move) []string {
 
 	distance[move.start] = 0
 	reachedEnd := false
-	for len(queue) != 0  || !reachedEnd {
+	for len(queue) != 0 || !reachedEnd {
 		newQueue := make([]Pos, 0)
 		for _, pos := range queue {
 			for _, dir := range dirs {
@@ -183,7 +183,7 @@ func (pad *Pad) getPaths(move Move) []string {
 	// fmt.Println(parents)
 	allPathsInPos := make([][]Pos, 0)
 	currPath := make([]Pos, 0)
-	
+
 	var dfs func(pos Pos)
 	dfs = func(currPos Pos) {
 		// add currposition to the path
@@ -241,7 +241,7 @@ var (
 	Numpad, Dirpad Pad
 )
 
-func printMinLens( numToDirs []string) {
+func printMinLens(numToDirs []string) {
 	minLen := math.MaxInt32
 	for _, str := range numToDirs {
 		minLen = min(minLen, len(str))
@@ -297,7 +297,7 @@ func solve1(codes []string, dirBoards int) int {
 		// translate remaining
 		for i := 0; i < dirBoards-1; i++ {
 			numToDirs = getMinLenTranslations(numToDirs)
-			fmt.Println("i: ", i, " translations: ", len(numToDirs), "each len: ", len(numToDirs[0]))
+			// fmt.Println("i: ", i, " translations: ", len(numToDirs), "each len: ", len(numToDirs[0]))
 		}
 
 		ans += len(numToDirs[0]) * getIntPart(code)
@@ -333,8 +333,8 @@ func Day21() {
 	// compute answers
 	fmt.Println("Expected answers:")
 	// different rows and columns from sample case
-	fmt.Println("Part a: ", 0)
-	fmt.Println("Part b: ", 0)
+	fmt.Println("Part a: ", 126384)
+	fmt.Println("Part b: ", "")
 
 	fmt.Println("Your answers:")
 	startTime := time.Now()
@@ -343,7 +343,8 @@ func Day21() {
 	fmt.Println("Time taken:", elapsed.Milliseconds(), "ms")
 	fmt.Println()
 	startTime = time.Now()
-	fmt.Println("Part b: ", solve1(codes, partBDirKeyboards))
+	// ansB := solve1(codes, partBDirKeyboards)
+	fmt.Println("Part b: ", "Need to Do")
 	elapsed = time.Since(startTime)
 	fmt.Println("Time taken:", elapsed.Milliseconds(), "ms")
 }
